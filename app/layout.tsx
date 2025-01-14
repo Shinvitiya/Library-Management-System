@@ -35,7 +35,7 @@ const imbPlexSans = localFont({
 const bebasNeue = localFont({
   src: [
     {
-      path: "../styles/fonts/IBMPlexSans-Bold.ttf",
+      path: "../styles/fonts/BebasNeue-Regular.ttf",
       weight: "400",
       style: "normal",
     },
