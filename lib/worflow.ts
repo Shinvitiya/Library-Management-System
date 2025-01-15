@@ -26,6 +26,7 @@ export const sendEmail = async ({
       provider: resend({ token: config.env.resendToken }),
     },
     body: {
+      //from: "Noyoshi Library-Management <subdomain@noyoshi.digtal>",
       from: "Noyoshi Library-Management <noyoshi.digtal>",
       to: [email],
       subject: subject,
