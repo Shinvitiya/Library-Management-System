@@ -44,6 +44,7 @@ interface Props {
   placeholder: string;
   folder: string;
   varaint: "dark" | "light";
+  value?: string;
   onFileChange: (filePath: string) => void;
 }
 const FileUpload = ({
@@ -53,9 +54,12 @@ const FileUpload = ({
   folder,
   varaint,
   onFileChange,
+  value,
 }: Props) => {
   const ikUploadRef = useRef(null);
-  const [file, setFile] = useState<{ filePath: string } | null>(null);
+  const [file, setFile] = useState<{ filePath: string }>({
+    filePath: value ?? "",
+  });
   const [progress, setProgress] = useState(0);
 
   const styles = {

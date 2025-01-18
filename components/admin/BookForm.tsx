@@ -33,6 +33,7 @@ import { Book } from "lucide-react";
 import { bookSchema } from "@/lib/validations";
 import { Textarea } from "../ui/textarea";
 import FileUpload from "../FileUpload";
+import ColorPicker from "./ColorPicker";
 
 interface Props extends Partial<Book> {
   type?: "create" | "update";
@@ -55,7 +56,9 @@ export const BookForm = ({ type, ...book }: Props) => {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof bookSchema>) => {};
+  const onSubmit = async (values: z.infer<typeof bookSchema>) => {
+    console.log(values);
+  };
 
   return (
     <Form {...form}>
@@ -203,7 +206,12 @@ export const BookForm = ({ type, ...book }: Props) => {
               <FormLabel className="text-base font-formal text-dark-500">
                 Primary Color
               </FormLabel>
-              {/* <FormControl>{Color Picker}</FormControl> */}
+              <FormControl>
+                <ColorPicker
+                  onPickerChange={field.onChange}
+                  value={field.value}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
