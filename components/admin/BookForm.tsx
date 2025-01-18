@@ -26,12 +26,13 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { FIELD_NAMES, FIELD_TYPES } from "@/constants";
-import ImageUpload from "../ImageUpload";
+import ImageUpload from "../FileUpload";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Book } from "lucide-react";
 import { bookSchema } from "@/lib/validations";
 import { Textarea } from "../ui/textarea";
+import FileUpload from "../FileUpload";
 
 interface Props extends Partial<Book> {
   type?: "create" | "update";
@@ -178,7 +179,17 @@ export const BookForm = ({ type, ...book }: Props) => {
               <FormLabel className="text-base font-formal text-dark-500">
                 Book Image
               </FormLabel>
-              {/* <FormControl>{File Upload}</FormControl> */}
+              <FormControl>
+                <FileUpload
+                  type="image"
+                  accept="image/*"
+                  placeholder="Upload a book cover"
+                  folder="books/covers"
+                  varaint="light"
+                  onFileChange={field.onChange}
+                  value={field.value}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
@@ -227,7 +238,17 @@ export const BookForm = ({ type, ...book }: Props) => {
               <FormLabel className="text-base font-formal text-dark-500">
                 Book Trailer
               </FormLabel>
-              {/* <FormControl>{File Upload}</FormControl> */}
+              <FormControl>
+                <FileUpload
+                  type="video"
+                  accept="video/*"
+                  placeholder="Upload a book trailer"
+                  folder="books/videos"
+                  varaint="light"
+                  onFileChange={field.onChange}
+                  value={field.value}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
