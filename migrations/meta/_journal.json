@@ -15,6 +15,13 @@
       "when": 1737214059533,
       "tag": "0001_clumsy_rhino",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737272071794,
+      "tag": "0002_shallow_supreme_intelligence",
+      "breakpoints": true
     }
   ]
 }

@@ -12,6 +12,8 @@ export const navigationLinks = [
   },
 ];
 
+export const sampleBooks = [];
+
 export const adminSideBarLinks = [
   {
     img: "/icons/admin/home.svg",
